@@ -3,7 +3,7 @@ export interface Card {
   cost: number;
   type: CardType;
   imagePath: string;
-  description: CardDescription;
+  description?: CardDescription;
   expansion: DominionExpansions;
 }
 
@@ -65,7 +65,7 @@ export enum CardType {
 
 export const cardBackgrounds: Record<CardType, string> = {
   [CardType.victory]: '/img/cards/template/victory.webp',
-  [CardType.victoryBasic]: '/img/cards/template/victor-basic.webp',
+  [CardType.victoryBasic]: '/img/cards/template/victory-basic.webp',
   [CardType.treasureBasic]: '/img/cards/template/treasure-basic.webp',
   [CardType.curseBasic]: '/img/cards/template/curse-basic.webp',
   [CardType.actionReaction]: '/img/cards/template/action-reaction.webp',
