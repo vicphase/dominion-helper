@@ -15,7 +15,7 @@ export type CardDescription = CardDescriptionItem[];
 
 export interface CardDescriptionItem {
   type: CardDescriptionItemType;
-  content?: string | BenefitContent;
+  content?: DescriptionContent[] | BenefitContent;
 }
 
 export enum CardDescriptionItemType {
@@ -24,6 +24,19 @@ export enum CardDescriptionItemType {
   benefit = 'benetif',
   description = 'description',
   divider = 'divider',
+}
+
+export interface DescriptionContent {
+  type: DescriptionContentType;
+  content: string | number;
+  breakLine?: boolean;
+}
+
+export enum DescriptionContentType {
+  label = 'label',
+  labelBold = 'labelBold',
+  victory = 'victory',
+  treasure = 'treasure',
 }
 
 export interface BenefitContent {

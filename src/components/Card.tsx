@@ -34,8 +34,8 @@ export default function Card({ card }: CardProps) {
       {/* Card description */}
       <div className="absolute z-20 flex w-full flex-wrap items-center" style={{ top: '100px', height: '74px' }}>
         <div className="w-full">
-          {card.description.map((descriptionItem, index) => (
-            <CardDescriptionItem key={index} descriptionItem={descriptionItem} />
+          {card.description.map((item, index) => (
+            <CardDescriptionItem key={index} item={item} />
           ))}
         </div>
       </div>
@@ -56,10 +56,10 @@ export default function Card({ card }: CardProps) {
       <div
         className="absolute z-20 flex w-full items-center justify-center"
         style={{
-          bottom: '5px',
+          bottom: '7px',
         }}
       >
-        <span className="font-trajanPro" style={{ fontSize: '9px' }}>
+        <span className="font-trajanPro" style={{ fontSize: '8px' }}>
           {cardTypeLabels[card.type]}
         </span>
       </div>

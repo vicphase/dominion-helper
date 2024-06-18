@@ -3,9 +3,11 @@ import { cards } from '@dominion/data/base';
 
 export default function Home() {
   return (
-    <main className="min-w-screen min-h-screen p-10">
-      {cards.map((card, index) => (
-        <Card key={index} card={card} />
+    <main className="min-w-screen flex flex-wrap p-10">
+      {cards.map(card => (
+        <div key={card.name} className="pr-3 pb-3">
+          <Card card={card} />
+        </div>
       ))}
     </main>
   );
