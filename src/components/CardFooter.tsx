@@ -1,10 +1,16 @@
-import { Card, CardType, cardTypeLabels, expansionLogos } from '@dominion/models/card.model';
+import { cardTypeLabelsEn } from '@dominion/i18n/en/common/card-type.labels';
+import { cardTypeLabelsEs } from '@dominion/i18n/es/common/card-type.labels';
+import { Langs } from '@dominion/models/app.model';
+import { Card, CardType, expansionLogos } from '@dominion/models/card.model';
 
 export interface CardFooterProps {
   card: Card;
+  lang: Langs;
 }
 
-export default function CardFooter({ card }: CardFooterProps) {
+const labels: Record<Langs, Record<CardType, string>> = { [Langs.en]: cardTypeLabelsEn, [Langs.es]: cardTypeLabelsEs };
+
+export default function CardFooter({ card, lang }: CardFooterProps) {
   const hasLargeImage = [CardType.curseBasic, CardType.treasureBasic, CardType.victoryBasic].includes(card.type);
   const bottom = hasLargeImage ? '7px' : '7px';
   const fontSize = hasLargeImage ? '11px' : '8px';
@@ -22,12 +28,9 @@ export default function CardFooter({ card }: CardFooterProps) {
       >
         <span className="text-md font-minion font-bold"> {card.cost}</span>
       </div>
-      <div
-        className="absolute z-20 flex w-full items-center justify-center"
-        style={{bottom}}
-      >
+      <div className="absolute z-20 flex w-full items-center justify-center" style={{ bottom }}>
         <span className="font-trajanPro" style={{ fontSize }}>
-          {cardTypeLabels[card.type]}
+          {labels[lang][card.type]}
         </span>
       </div>
       <div

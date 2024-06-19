@@ -1,24 +1,35 @@
-import { DescriptionContent, DescriptionContentType } from '@dominion/models/card.model';
+import { baseDescriptionsLabelsEn } from '@dominion/i18n/en/base/descriptions.labels';
+import { baseDescriptionsLabelsEs } from '@dominion/i18n/es/base/descriptions.labels';
+import { Langs } from '@dominion/models/app.model';
+import { Card, DescriptionContent, DescriptionContentType } from '@dominion/models/card.model';
 
 export interface DescriptionContentItemProps {
+  card: Card;
   item: DescriptionContent;
+  lang: Langs;
 }
 
-export default function DescriptionContentItem({ item }: DescriptionContentItemProps) {
+const descriptionLabels: Record<Langs, Record<string, string>> = {
+  [Langs.en]: { ...baseDescriptionsLabelsEn },
+  [Langs.es]: { ...baseDescriptionsLabelsEs },
+};
+
+export default function DescriptionContentItem({ card, item, lang }: DescriptionContentItemProps) {
   const { type, content, breakLine } = item;
+  const fontSize = card.descriptionFontSize ?? '8px';
   switch (type) {
     case DescriptionContentType.label:
       return (
         <>
-          <span style={{ fontSize: '8px' }}>{content}</span>
+          <span style={{ fontSize }}>{descriptionLabels[lang][content] ?? content}</span>
           {breakLine && <br />}
         </>
       );
     case DescriptionContentType.labelBold:
       return (
         <>
-          <span style={{ fontSize: '8px' }} className="font-bold">
-            {content}
+          <span style={{ fontSize }} className="font-bold">
+            {descriptionLabels[lang][content] ?? content}
           </span>
           {breakLine && <br />}
         </>
@@ -29,8 +40,8 @@ export default function DescriptionContentItem({ item }: DescriptionContentItemP
           <div
             className="flex items-center justify-center bg-cover bg-center"
             style={{
-              width: '10px',
-              height: '10px',
+              width: '11px',
+              height: '11px',
               backgroundImage: `url(img/elements/coin.png)`,
             }}
           >

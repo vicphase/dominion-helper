@@ -3,6 +3,7 @@ export interface Card {
   cost: number;
   type: CardType;
   imagePath: string;
+  descriptionFontSize?: string;
   description?: CardDescription;
   expansion: DominionExpansions;
 }
@@ -73,22 +74,6 @@ export const cardBackgrounds: Record<CardType, string> = {
   [CardType.actionAttack]: '/img/cards/template/action.webp',
 };
 
-export const cardTypeLabels: Record<CardType, string> = {
-  [CardType.victory]: 'Victory',
-  [CardType.victoryBasic]: 'Victory',
-  [CardType.treasureBasic]: 'Treasure',
-  [CardType.curseBasic]: 'Curse',
-  [CardType.actionReaction]: 'Action - Reaction',
-  [CardType.action]: 'Action',
-  [CardType.actionAttack]: 'Action - Attack',
-};
-
-export const benefitTypeLabels: Record<BenefitType, BenefitTypeLabel> = {
-  [BenefitType.action]: { singular: 'Action', plural: 'Actions' },
-  [BenefitType.buy]: { singular: 'Buy', plural: 'Buy' },
-  [BenefitType.card]: { singular: 'Card', plural: 'Cards' },
-  [BenefitType.treasure]: { singular: 'Treasure', plural: 'Treasure' },
-};
 
 export const expansionLogos: Record<DominionExpansions, string> = {
   [DominionExpansions.base]: '/img/elements/base.png',

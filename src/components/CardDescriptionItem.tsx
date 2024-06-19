@@ -1,7 +1,11 @@
+import { benefitTypeLabelsEn } from '@dominion/i18n/en/common/benefit-type.labels';
+import { benefitTypeLabelsEs } from '@dominion/i18n/es/common/benefit-type.labels';
+import { Langs } from '@dominion/models/app.model';
 import {
   BenefitContent,
   BenefitType,
-  benefitTypeLabels,
+  BenefitTypeLabel,
+  Card,
   CardDescriptionItem as CardDescriptionItemModel,
   CardDescriptionItemType,
   DescriptionContent,
@@ -10,12 +14,20 @@ import {
 import DescriptionContentItem from './DescriptionContentItem';
 
 export interface CardDescriptionItemProps {
+  card: Card;
   item: CardDescriptionItemModel;
+  lang: Langs;
 }
 
-export default function CardDescriptionItem({ item }: CardDescriptionItemProps) {
+const benefitLabels: Record<Langs, Record<BenefitType, BenefitTypeLabel>> = {
+  [Langs.en]: benefitTypeLabelsEn,
+  [Langs.es]: benefitTypeLabelsEs,
+};
+
+export default function CardDescriptionItem({ card, item, lang }: CardDescriptionItemProps) {
   let amount: number;
   const { type, content } = item;
+  const lineHeight = card.descriptionFontSize ?? '8px';
   switch (type) {
     case CardDescriptionItemType.benefit:
       const benefitContent = content as BenefitContent;
@@ -45,7 +57,7 @@ export default function CardDescriptionItem({ item }: CardDescriptionItemProps) 
             </>
           ) : (
             <span>
-              +{amount} {benefitTypeLabels[benefitType][labelType]}
+              +{amount} {benefitLabels[lang][benefitType][labelType]}
             </span>
           )}
         </div>
@@ -59,9 +71,9 @@ export default function CardDescriptionItem({ item }: CardDescriptionItemProps) 
     case CardDescriptionItemType.description:
       const descriptionContent = content as DescriptionContent[];
       return (
-        <div className="w-full text-center font-times" style={{ lineHeight: '8px', display: 'ruby-text' }}>
+        <div className="w-full text-center font-times" style={{ lineHeight, display: 'ruby-text' }}>
           {descriptionContent.map((item, index) => (
-            <DescriptionContentItem key={index} item={item} />
+            <DescriptionContentItem key={index} card={card} item={item} lang={lang} />
           ))}
         </div>
       );

@@ -12,7 +12,6 @@
   src: url('/fonts/TrajanPro-Regular.ttf') format('truetype');
 }
 
-
 @font-face {
   font-family: 'TrajanPro';
   src: url('/fonts/TrajanPro-Bold.otf') format('opentype');
@@ -29,7 +28,6 @@
   src: url('/fonts/Times-New-Roman-Bold.ttf') format('truetype');
   font-weight: 700;
 }
-
 
 body {
   font-family: 'Times New Roman', Times, serif;

@@ -1,3 +1,4 @@
+import { Langs } from '@dominion/models/app.model';
 import { Card as CardModel, cardBackgrounds } from '@dominion/models/card.model';
 
 import CardArtImage from './CardArtImage';
@@ -7,9 +8,10 @@ import CardTitle from './CardTitle';
 
 export interface CardProps {
   card: CardModel;
+  lang: Langs;
 }
 
-export default function Card({ card }: CardProps) {
+export default function Card({ card, lang }: CardProps) {
   return (
     <div
       className="relative rounded-lg border-2 border-neutral-900 bg-neutral-900"
@@ -22,16 +24,16 @@ export default function Card({ card }: CardProps) {
       ></div>
 
       {/* Card Title */}
-      <CardTitle card={card} />
+      <CardTitle card={card} lang={lang} />
 
       {/* Card art image */}
       <CardArtImage card={card} />
 
       {/* Card description */}
-      <CardDescription card={card} />
+      <CardDescription card={card} lang={lang} />
 
       {/* Footer */}
-      <CardFooter card={card} />
+      <CardFooter card={card} lang={lang} />
     </div>
   );
 }
