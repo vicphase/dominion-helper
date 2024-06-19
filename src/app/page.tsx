@@ -5,7 +5,7 @@ import GameMenu from '@dominion/components/GameMenu';
 import { randomizeGame } from '@dominion/functions/randomize-game';
 import { Card, DominionExpansions } from '@dominion/models/card.model';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 
 export default function Home() {
   const [hasGameStarted, setHasGameStarted] = useState(true);
@@ -42,11 +42,13 @@ export default function Home() {
 
   return (
     <main className="min-w-screen flex flex-wrap p-10">
-      {hasGameStarted ? (
-        <CardList cards={cards} startNewGame={() => clearGame()} />
-      ) : (
-        <GameMenu onStartGame={onStartGame} />
-      )}
+      <Suspense fallback={<div>Loading...</div>}>
+        {hasGameStarted ? (
+          <CardList cards={cards} startNewGame={() => clearGame()} />
+        ) : (
+          <GameMenu onStartGame={onStartGame} />
+        )}
+      </Suspense>
     </main>
   );
 }
