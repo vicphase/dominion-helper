@@ -3,11 +3,12 @@ import { stapleLabelsEn } from '@dominion/i18n/en/common/staple.labels';
 import { baseTitleLabelsEs } from '@dominion/i18n/es/base/titles.labels';
 import { stapleLabelsEs } from '@dominion/i18n/es/common/staple.labels';
 import { Langs } from '@dominion/models/app.model';
-import { BenefitContent, Card, CardDescription, CardType } from '@dominion/models/card.model';
+import { BenefitContent, Card, CardDescription, CardSize, CardType } from '@dominion/models/card.model';
 
 export interface CardTitleProps {
   card: Card;
   lang: Langs;
+  size: CardSize;
 }
 
 const labelsEn = { ...stapleLabelsEn, ...baseTitleLabelsEn };
@@ -18,10 +19,31 @@ const labels: Record<Langs, Record<string, string>> = {
   [Langs.es]: labelsEs,
 };
 
-export default function CardTitle({ card, lang }: CardTitleProps) {
+const hasLargeImageTop: Record<CardSize, string> = {
+  [CardSize.Normal]: '8px',
+  [CardSize.Large]: '16px',
+};
+
+const defaultTop: Record<CardSize, string> = {
+  [CardSize.Normal]: '6px',
+  [CardSize.Large]: '12px',
+};
+
+const hasLargeImageFontSize: Record<CardSize, string> = {
+  [CardSize.Normal]: '13px',
+  [CardSize.Large]: '26px',
+};
+
+const defaultFontSize: Record<CardSize, string> = {
+  [CardSize.Normal]: '10px',
+  [CardSize.Large]: '20px',
+};
+
+export default function CardTitle({ card, lang, size }: CardTitleProps) {
+  const isNormalCard = size === CardSize.Normal;
   const hasLargeImage = [CardType.curseBasic, CardType.treasureBasic, CardType.victoryBasic].includes(card.type);
-  const top = hasLargeImage ? '8px' : '6px';
-  const fontSize = hasLargeImage ? '13px' : '10px';
+  const top = hasLargeImage ? hasLargeImageTop[size] : defaultTop[size];
+  const fontSize = hasLargeImage ? hasLargeImageFontSize[size] : defaultFontSize[size];
   return (
     <>
       {card.type === CardType.treasureBasic && (
@@ -29,28 +51,28 @@ export default function CardTitle({ card, lang }: CardTitleProps) {
           <div
             className="absolute z-20 flex items-center justify-center bg-cover bg-center"
             style={{
-              width: '18px',
-              height: '18px',
+              width: isNormalCard ? '18px' : '36px',
+              height: isNormalCard ? '18px' : '36px',
               backgroundImage: `url(img/elements/coin.png)`,
-              top: '6px',
-              left: '4px',
+              top: isNormalCard ? '6px' : '12px',
+              left: isNormalCard ? '4px' : '8px',
             }}
           >
-            <span className="text-md font-minion font-bold">
+            <span className="font-minion font-bold" style={{ fontSize: isNormalCard ? '16px' : '32px' }}>
               {((card.description as CardDescription)[0].content as BenefitContent).amount}
             </span>
           </div>
           <div
             className="absolute z-20 flex items-center justify-center bg-cover bg-center"
             style={{
-              width: '18px',
-              height: '18px',
+              width: isNormalCard ? '18px' : '36px',
+              height: isNormalCard ? '18px' : '36px',
               backgroundImage: `url(img/elements/coin.png)`,
-              top: '6px',
-              right: '6px',
+              top: isNormalCard ? '6px' : '12px',
+              right: isNormalCard ? '6px' : '12px',
             }}
           >
-            <span className="text-md font-minion font-bold">
+            <span className="font-minion font-bold" style={{ fontSize: isNormalCard ? '16px' : '32px' }}>
               {((card.description as CardDescription)[0].content as BenefitContent).amount}
             </span>
           </div>

@@ -74,7 +74,11 @@ export const cardBackgrounds: Record<CardType, string> = {
   [CardType.actionAttack]: '/img/cards/template/action.webp',
 };
 
-
 export const expansionLogos: Record<DominionExpansions, string> = {
   [DominionExpansions.base]: '/img/elements/base.png',
 };
+
+export enum CardSize {
+  Normal = 'Normal',
+  Large = 'Large',
+}

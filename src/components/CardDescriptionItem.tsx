@@ -8,6 +8,7 @@ import {
   Card,
   CardDescriptionItem as CardDescriptionItemModel,
   CardDescriptionItemType,
+  CardSize,
   DescriptionContent,
 } from '@dominion/models/card.model';
 
@@ -17,6 +18,7 @@ export interface CardDescriptionItemProps {
   card: Card;
   item: CardDescriptionItemModel;
   lang: Langs;
+  size: CardSize;
 }
 
 const benefitLabels: Record<Langs, Record<BenefitType, BenefitTypeLabel>> = {
@@ -24,20 +26,24 @@ const benefitLabels: Record<Langs, Record<BenefitType, BenefitTypeLabel>> = {
   [Langs.es]: benefitTypeLabelsEs,
 };
 
-export default function CardDescriptionItem({ card, item, lang }: CardDescriptionItemProps) {
-  let amount: number;
+export default function CardDescriptionItem({ card, item, lang, size }: CardDescriptionItemProps) {
   const { type, content } = item;
-  const lineHeight = card.descriptionFontSize ?? '8px';
+  const isNormalCard = size === CardSize.Normal;
+  let amount: number;
+  let lineHeight = card.descriptionFontSize ?? '8px';
+  lineHeight = isNormalCard ? lineHeight : '16px';
+
   switch (type) {
     case CardDescriptionItemType.benefit:
       const benefitContent = content as BenefitContent;
       const benefitType = benefitContent.type;
       amount = benefitContent.amount;
       const labelType = amount === 1 ? 'singular' : 'plural';
+      const fontSize = isNormalCard ? '10px' : '20px';
       return (
         <div
           className="flex w-full justify-center font-times font-bold"
-          style={{ fontSize: '10px', lineHeight: '12px' }}
+          style={{ fontSize, lineHeight: isNormalCard ? '12px' : '24px' }}
         >
           {benefitType === BenefitType.treasure ? (
             <>
@@ -45,14 +51,12 @@ export default function CardDescriptionItem({ card, item, lang }: CardDescriptio
               <div
                 className="flex items-center justify-center bg-cover bg-center"
                 style={{
-                  width: '12px',
-                  height: '12px',
+                  width: isNormalCard ? '12px' : '24px',
+                  height: isNormalCard ? '12px' : '24px',
                   backgroundImage: `url(img/elements/coin.png)`,
                 }}
               >
-                <span className="font-minion font-bold" style={{ marginTop: '1px' }}>
-                  {amount}
-                </span>
+                <span className="font-minion font-bold">{amount}</span>
               </div>
             </>
           ) : (
@@ -64,7 +68,7 @@ export default function CardDescriptionItem({ card, item, lang }: CardDescriptio
       );
     case CardDescriptionItemType.divider:
       return (
-        <div className="w-full px-5">
+        <div className={`w-full px-${isNormalCard ? 5 : 10}`}>
           <div className="w-full border border-neutral-900"></div>
         </div>
       );
@@ -73,7 +77,7 @@ export default function CardDescriptionItem({ card, item, lang }: CardDescriptio
       return (
         <div className="w-full text-center font-times" style={{ lineHeight, display: 'ruby-text' }}>
           {descriptionContent.map((item, index) => (
-            <DescriptionContentItem key={index} card={card} item={item} lang={lang} />
+            <DescriptionContentItem key={index} card={card} item={item} lang={lang} size={size} />
           ))}
         </div>
       );

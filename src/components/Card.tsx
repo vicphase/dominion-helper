@@ -1,5 +1,5 @@
 import { Langs } from '@dominion/models/app.model';
-import { Card as CardModel, cardBackgrounds } from '@dominion/models/card.model';
+import { Card as CardModel, CardSize, cardBackgrounds } from '@dominion/models/card.model';
 
 import CardArtImage from './CardArtImage';
 import CardDescription from './CardDescription';
@@ -9,13 +9,24 @@ import CardTitle from './CardTitle';
 export interface CardProps {
   card: CardModel;
   lang: Langs;
+  size: CardSize;
 }
 
-export default function Card({ card, lang }: CardProps) {
+const widths: Record<CardSize, string> = {
+  [CardSize.Normal]: '123px',
+  [CardSize.Large]: '246px',
+};
+
+const heights: Record<CardSize, string> = {
+  [CardSize.Normal]: '197px',
+  [CardSize.Large]: '394px',
+};
+
+export default function Card({ card, lang, size }: CardProps) {
   return (
     <div
       className="relative rounded-lg border-2 border-neutral-900 bg-neutral-900"
-      style={{ width: '123px', height: '197px' }}
+      style={{ width: widths[size], height: heights[size] }}
     >
       {/* Card background */}
       <div
@@ -24,16 +35,16 @@ export default function Card({ card, lang }: CardProps) {
       ></div>
 
       {/* Card Title */}
-      <CardTitle card={card} lang={lang} />
+      <CardTitle card={card} lang={lang} size={size} />
 
       {/* Card art image */}
-      <CardArtImage card={card} />
+      <CardArtImage card={card} size={size} />
 
       {/* Card description */}
-      <CardDescription card={card} lang={lang} />
+      <CardDescription card={card} lang={lang} size={size} />
 
       {/* Footer */}
-      <CardFooter card={card} lang={lang} />
+      <CardFooter card={card} lang={lang} size={size} />
     </div>
   );
 }

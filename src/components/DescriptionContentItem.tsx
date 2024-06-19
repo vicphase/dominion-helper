@@ -1,12 +1,13 @@
 import { baseDescriptionsLabelsEn } from '@dominion/i18n/en/base/descriptions.labels';
 import { baseDescriptionsLabelsEs } from '@dominion/i18n/es/base/descriptions.labels';
 import { Langs } from '@dominion/models/app.model';
-import { Card, DescriptionContent, DescriptionContentType } from '@dominion/models/card.model';
+import { Card, CardSize, DescriptionContent, DescriptionContentType } from '@dominion/models/card.model';
 
 export interface DescriptionContentItemProps {
   card: Card;
   item: DescriptionContent;
   lang: Langs;
+  size: CardSize;
 }
 
 const descriptionLabels: Record<Langs, Record<string, string>> = {
@@ -14,9 +15,11 @@ const descriptionLabels: Record<Langs, Record<string, string>> = {
   [Langs.es]: { ...baseDescriptionsLabelsEs },
 };
 
-export default function DescriptionContentItem({ card, item, lang }: DescriptionContentItemProps) {
+export default function DescriptionContentItem({ card, item, lang, size }: DescriptionContentItemProps) {
   const { type, content, breakLine } = item;
-  const fontSize = card.descriptionFontSize ?? '8px';
+  const isNormalCard = size === CardSize.Normal;
+  let fontSize = card.descriptionFontSize ?? '8px';
+  fontSize = isNormalCard ? fontSize : '16px';
   switch (type) {
     case DescriptionContentType.label:
       return (
@@ -40,12 +43,12 @@ export default function DescriptionContentItem({ card, item, lang }: Description
           <div
             className="flex items-center justify-center bg-cover bg-center"
             style={{
-              width: '11px',
-              height: '11px',
+              width: isNormalCard ? '11px' : '22px',
+              height: isNormalCard ? '11px' : '22px',
               backgroundImage: `url(img/elements/coin.png)`,
             }}
           >
-            <span className="font-minion font-bold" style={{ fontSize: '8px' }}>
+            <span className="font-minion font-bold" style={{ fontSize: isNormalCard ? '8px' : '16px' }}>
               {content}
             </span>
           </div>
@@ -56,14 +59,14 @@ export default function DescriptionContentItem({ card, item, lang }: Description
       return (
         <>
           <div className="flex items-center">
-            <span className="font-minion font-bold" style={{ fontSize: '8px' }}>
+            <span className="font-minion font-bold" style={{ fontSize: isNormalCard ? '8px' : '16px' }}>
               {content}
             </span>
             <div
               className="justify-center bg-cover bg-center"
               style={{
-                width: '8px',
-                height: '8px',
+                width: isNormalCard ? '8px' : '16px',
+                height: isNormalCard ? '8px' : '16px',
                 backgroundImage: `url(img/elements/victory.png)`,
               }}
             ></div>
