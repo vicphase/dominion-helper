@@ -16,7 +16,7 @@ export const cards: Card[] = [
     cost: 0,
     type: CardType.treasureBasic,
     imagePath: '/img/cards/art/base/copper.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -29,7 +29,7 @@ export const cards: Card[] = [
     cost: 3,
     type: CardType.treasureBasic,
     imagePath: '/img/cards/art/base/silver.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -42,7 +42,7 @@ export const cards: Card[] = [
     cost: 6,
     type: CardType.treasureBasic,
     imagePath: '/img/cards/art/base/gold.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -55,27 +55,27 @@ export const cards: Card[] = [
     cost: 0,
     type: CardType.victoryBasic,
     imagePath: '/img/cards/art/base/estate.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
   },
   {
     name: StapleCards.Duchy,
     cost: 5,
     type: CardType.victoryBasic,
     imagePath: '/img/cards/art/base/duchy.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
   },
   {
     name: StapleCards.Province,
     cost: 8,
     type: CardType.victoryBasic,
     imagePath: '/img/cards/art/base/province.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
   },
   {
     name: StapleCards.Curse,
     cost: 0,
     type: CardType.curseBasic,
     imagePath: '/img/cards/art/base/curse.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
   },
 ];

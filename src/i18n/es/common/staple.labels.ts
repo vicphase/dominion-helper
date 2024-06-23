@@ -1,4 +1,4 @@
-import { StapleCards } from '@dominion/data/staple';
+import { StapleCards } from '@dominion/data/cards/staple';
 
 export const stapleLabelsEs: Record<StapleCards, string> = {
   [StapleCards.Copper]: 'Cobre',

@@ -11,21 +11,31 @@ export interface CardFooterProps {
 
 const labels: Record<Langs, Record<CardType, string>> = { [Langs.en]: cardTypeLabelsEn, [Langs.es]: cardTypeLabelsEs };
 
-const hasLargeImageFontSize: Record<CardSize, string> = {
-  [CardSize.Normal]: '11px',
-  [CardSize.Large]: '22px',
-};
-
-const defaultFontSize: Record<CardSize, string> = {
-  [CardSize.Normal]: '8px',
-  [CardSize.Large]: '16px',
+const fontSizes: Record<CardType, number> = {
+  [CardType.action]: 8,
+  [CardType.actionAttack]: 8,
+  [CardType.actionAttackTraveller]: 5,
+  [CardType.actionDuration]: 7,
+  [CardType.actionDurationAttack]: 5,
+  [CardType.actionDurationReaction]: 5,
+  [CardType.actionReaction]: 8,
+  [CardType.actionReserve]: 8,
+  [CardType.actionReserveVictory]: 5,
+  [CardType.actionTraveller]: 7,
+  [CardType.curseBasic]: 11,
+  [CardType.treasure]: 10,
+  [CardType.treasureAttack]: 8,
+  [CardType.treasureBasic]: 11,
+  [CardType.treasureReserve]: 8,
+  [CardType.victory]: 11,
+  [CardType.victoryBasic]: 11,
 };
 
 export default function CardFooter({ card, lang, size }: CardFooterProps) {
-  const hasLargeImage = [CardType.curseBasic, CardType.treasureBasic, CardType.victoryBasic].includes(card.type);
   const isNormalCard = size === CardSize.Normal;
   const bottom = isNormalCard ? '7px' : '14px';
-  const fontSize = hasLargeImage ? hasLargeImageFontSize[size] : defaultFontSize[size];
+  const height = isNormalCard ? '10px' : '20px';
+  const fontSize = `${isNormalCard ? fontSizes[card.type] : fontSizes[card.type] * 2}px`;
   return (
     <>
       <div
@@ -41,7 +51,7 @@ export default function CardFooter({ card, lang, size }: CardFooterProps) {
       >
         <span className="font-minion font-bold"> {card.cost}</span>
       </div>
-      <div className="absolute z-20 flex w-full items-center justify-center" style={{ bottom }}>
+      <div className="absolute z-20 flex w-full items-center justify-center" style={{ bottom, height }}>
         <span className="font-trajanPro" style={{ fontSize }}>
           {labels[lang][card.type]}
         </span>

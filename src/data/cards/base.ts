@@ -112,7 +112,7 @@ export const cards: Card[] = [
     cost: 6,
     type: CardType.action,
     imagePath: '/img/cards/art/base/artisan.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -132,8 +132,8 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.actionAttack,
     imagePath: '/img/cards/art/base/bandit.webp',
-    expansion: DominionExpansions.base,
-    descriptionFontSize: '7px',
+    expansion: DominionExpansions.Base,
+    descriptionFontSizePx: 7,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -153,8 +153,8 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.actionAttack,
     imagePath: '/img/cards/art/base/bureaucrat.webp',
-    expansion: DominionExpansions.base,
-    descriptionFontSize: '7px',
+    expansion: DominionExpansions.Base,
+    descriptionFontSizePx: 7,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -174,7 +174,7 @@ export const cards: Card[] = [
     cost: 2,
     type: CardType.action,
     imagePath: '/img/cards/art/base/cellar.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -195,7 +195,7 @@ export const cards: Card[] = [
     cost: 2,
     type: CardType.action,
     imagePath: '/img/cards/art/base/chapel.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -211,7 +211,7 @@ export const cards: Card[] = [
     cost: 5,
     type: CardType.action,
     imagePath: '/img/cards/art/base/council-room.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -232,7 +232,7 @@ export const cards: Card[] = [
     cost: 5,
     type: CardType.action,
     imagePath: '/img/cards/art/base/festival.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -253,7 +253,7 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.victory,
     imagePath: '/img/cards/art/base/gardens.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -271,7 +271,7 @@ export const cards: Card[] = [
     cost: 3,
     type: CardType.action,
     imagePath: '/img/cards/art/base/harbinger.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -296,7 +296,7 @@ export const cards: Card[] = [
     cost: 5,
     type: CardType.action,
     imagePath: '/img/cards/art/base/laboratory.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -313,7 +313,7 @@ export const cards: Card[] = [
     cost: 5,
     type: CardType.action,
     imagePath: '/img/cards/art/base/library.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -332,7 +332,7 @@ export const cards: Card[] = [
     cost: 5,
     type: CardType.action,
     imagePath: '/img/cards/art/base/market.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -357,7 +357,7 @@ export const cards: Card[] = [
     cost: 3,
     type: CardType.action,
     imagePath: '/img/cards/art/base/merchant.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -383,7 +383,7 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.actionAttack,
     imagePath: '/img/cards/art/base/militia.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -403,7 +403,7 @@ export const cards: Card[] = [
     cost: 5,
     type: CardType.action,
     imagePath: '/img/cards/art/base/mine.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -422,7 +422,7 @@ export const cards: Card[] = [
     cost: 2,
     type: CardType.actionReaction,
     imagePath: '/img/cards/art/base/moat.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -447,7 +447,7 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.action,
     imagePath: '/img/cards/art/base/moneylender.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -465,7 +465,7 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.action,
     imagePath: '/img/cards/art/base/poacher.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -493,7 +493,7 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.action,
     imagePath: '/img/cards/art/base/remodel.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -511,8 +511,8 @@ export const cards: Card[] = [
     cost: 5,
     type: CardType.action,
     imagePath: '/img/cards/art/base/sentry.webp',
-    expansion: DominionExpansions.base,
-    descriptionFontSize: '7px',
+    expansion: DominionExpansions.Base,
+    descriptionFontSizePx: 7,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -538,7 +538,7 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.action,
     imagePath: '/img/cards/art/base/smithy.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -551,7 +551,7 @@ export const cards: Card[] = [
     cost: 4,
     type: CardType.action,
     imagePath: '/img/cards/art/base/throne-room.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,
@@ -567,7 +567,7 @@ export const cards: Card[] = [
     cost: 3,
     type: CardType.action,
     imagePath: '/img/cards/art/base/vassal.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -588,7 +588,7 @@ export const cards: Card[] = [
     cost: 3,
     type: CardType.action,
     imagePath: '/img/cards/art/base/village.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -605,7 +605,7 @@ export const cards: Card[] = [
     cost: 5,
     type: CardType.actionAttack,
     imagePath: '/img/cards/art/base/witch.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.benefit,
@@ -622,7 +622,7 @@ export const cards: Card[] = [
     cost: 3,
     type: CardType.action,
     imagePath: '/img/cards/art/base/workshop.webp',
-    expansion: DominionExpansions.base,
+    expansion: DominionExpansions.Base,
     description: [
       {
         type: CardDescriptionItemType.description,

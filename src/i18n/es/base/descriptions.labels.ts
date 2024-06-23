@@ -1,4 +1,4 @@
-import { BaseCardsDescriptions } from '@dominion/data/base';
+import { BaseCardsDescriptions } from '@dominion/data/cards/base';
 
 export const baseDescriptionsLabelsEs: Record<BaseCardsDescriptions, string> = {
   [BaseCardsDescriptions.Artisan_1]: 'Gana una carta a tu mano que',
@@ -18,7 +18,7 @@ export const baseDescriptionsLabelsEs: Record<BaseCardsDescriptions, string> = {
   [BaseCardsDescriptions.Bureaucrat_4]: 'y ponerla enzima de su mazo',
   [BaseCardsDescriptions.Bureaucrat_5]: '(o mostrar su mano si no',
   [BaseCardsDescriptions.Bureaucrat_6]: 'tienen cartas de Victoria).',
-  [BaseCardsDescriptions.Cellar_1]: 'Descarta cualquier número de cartas',
+  [BaseCardsDescriptions.Cellar_1]: 'Descarta cualquier número de cartas ',
   [BaseCardsDescriptions.Cellar_2]: '+1 Carta ',
   [BaseCardsDescriptions.Cellar_3]: 'por cada carta descartada',
   [BaseCardsDescriptions.Chapel_1]: 'Elimina hasta 4 cartas',
@@ -40,7 +40,7 @@ export const baseDescriptionsLabelsEs: Record<BaseCardsDescriptions, string> = {
   [BaseCardsDescriptions.Merchant_3]: '.',
   [BaseCardsDescriptions.Militia_1]: 'Los demás jugadores se descartan',
   [BaseCardsDescriptions.Militia_2]: 'hasta quedarse con 3 cartas en la mano.',
-  [BaseCardsDescriptions.Mine_1]: 'Puedes eliminar una carta de Tesoro de',
+  [BaseCardsDescriptions.Mine_1]: 'Puedes eliminar una carta de Tesoro de ',
   [BaseCardsDescriptions.Mine_2]: 'tu mano. Gana una carta de tesoro ',
   [BaseCardsDescriptions.Mine_3]: 'que cueste hasta ',
   [BaseCardsDescriptions.Mine_4]: ' más. La carta ganada va directamente a tu mano.',

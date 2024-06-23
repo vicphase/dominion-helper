@@ -1,4 +1,4 @@
-import { BaseCards } from '@dominion/data/base';
+import { BaseCards } from '@dominion/data/cards/base';
 
 export const baseTitleLabelsEn: Record<BaseCards, string> = {
   [BaseCards.Artisan]: 'Artisan',

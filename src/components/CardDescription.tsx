@@ -18,7 +18,7 @@ export default function CardDescription({ card, lang, size }: CardDescriptionPro
     <>
       {!hasLargeImage && (
         <div className="absolute z-20 flex w-full flex-wrap items-center" style={{ top, height }}>
-          <div className="w-full px-1">
+          <div className={`w-full px-${isNormalCard ? 2 : 3}`}>
             {card.description?.map((item, index) => (
               <CardDescriptionItem key={index} card={card} item={item} lang={lang} size={size} />
             ))}

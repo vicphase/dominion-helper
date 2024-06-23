@@ -36,13 +36,18 @@ export default function GameMenu({ onStartGame }: GameMenuProps) {
           {Object.values(DominionExpansions).map(expansion => (
             <button
               key={expansion}
-              className={`w-1/2 rounded border border-neutral-700 p-5 ${selectedExpansions.includes(expansion) ? 'bg-yellow-200' : 'bg-transparent'}`}
+              className="w-1/2 p-3"
               type="button"
               onClick={() => toggleSelectedExpansion(expansion)}
             >
-              {expansion.toUpperCase()}
-              <div className="flex w-full justify-center">
-                <Image src={`/img/elements/${expansion}.png`} alt={expansion} width={64} height={64} />
+              <div
+                className={`rounded border border-neutral-700 p-3 ${selectedExpansions.includes(expansion) ? 'bg-yellow-200' : 'bg-transparent'}`}
+                style={{ minHeight: '135px' }}
+              >
+                {expansion.toUpperCase()}
+                <div className="mt-3 flex w-full justify-center">
+                  <Image src={`/img/elements/${expansion}.png`} alt={expansion} width={64} height={64} />
+                </div>
               </div>
             </button>
           ))}

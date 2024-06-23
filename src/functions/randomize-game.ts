@@ -1,8 +1,10 @@
-import { cards as baseCards } from '@dominion/data/base';
+import { cards as adventureCards } from '@dominion/data/cards/adventures';
+import { cards as baseCards } from '@dominion/data/cards/base';
 import { Card, DominionExpansions } from '@dominion/models/card.model';
 
 const cardsMap: Record<DominionExpansions, Card[]> = {
-  [DominionExpansions.base]: baseCards,
+  [DominionExpansions.Base]: baseCards,
+  [DominionExpansions.Adventures]: adventureCards,
 };
 
 export function randomizeGame(
@@ -11,7 +13,7 @@ export function randomizeGame(
 ): { selectedCards: Card[]; selectedIndexes: number[] } {
   let cards: Card[] = [];
   expansions.forEach(expansion => (cards = [...cards, ...cardsMap[expansion]]));
-  const possibleRandomNumbers = cards.length -1;
+  const possibleRandomNumbers = cards.length - 1;
   let cardIndexes: number[] = [];
   if (existingCardIndexes?.length) {
     cardIndexes = existingCardIndexes;
@@ -23,7 +25,6 @@ export function randomizeGame(
   }
   return { selectedCards: cards.filter((_, index) => cardIndexes.includes(index)), selectedIndexes: cardIndexes };
 }
-
 function getRandomInt(min: number, max: number): number {
   min = Math.ceil(min);
   max = Math.floor(max);
