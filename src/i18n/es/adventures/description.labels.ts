@@ -14,7 +14,7 @@ export const adventureDescriptionLabelsEs: Record<AdventureCardsDescriptions, st
   Caravan_Guard_3: 'Cuando otro jugador juega una carta de Ataque, puedes jugar esta carta primero desde tu mano.',
   Champion_1: `Por el resto del juego, cuando otro jugador juegue un Ataque, no te afecta, y cuando juegues una carta de Acción, primero obtienes `,
   Champion_2: '+1 Acción.',
-  Coin_of_the_Realm_1: 'Después de jugar una carta de Acción, puedes llamar a esto, por ',
+  Coin_of_the_Realm_1: 'Después de jugar una carta de Acción, puedes llamar esta carta, por ',
   Coin_of_the_Realm_2: '+2 Acciones.',
   Disciple_1: 'Puedes jugar una carta de Acción de tu mano dos veces. Gana una copia de ella.',
   Disciple_2: 'Cuando descartes esta carta al juego, puedes cambiarlo por un Maestro.',
@@ -25,7 +25,7 @@ export const adventureDescriptionLabelsEs: Record<AdventureCardsDescriptions, st
   Dungeon_2: '+2 Cartas ',
   Dungeon_3: ', luego descarta 2 cartas.',
   Duplicate_1: 'Cuando ganes una carta que cueste hasta ',
-  Duplicate_2: ', puedes llamar a esto, para ganar una copia de esa carta.',
+  Duplicate_2: ', puedes llamar esta carta, para ganar una copia de esa carta.',
   Fugitive_1: 'Descarta una carta.',
   Fugitive_2: 'Cuando descartes esta carta al juego, puedes cambiarlo por un Discípulo.',
   Gear_1:
@@ -35,7 +35,7 @@ export const adventureDescriptionLabelsEs: Record<AdventureCardsDescriptions, st
   Giant_3: ', y cada otro jugador revela la carta superior de su mazo, la destierra si cuesta de ',
   Giant_4: 'a',
   Giant_5: ', y de lo contrario la descarta y gana una Maldición.',
-  Guide_1: 'Al inicio de tu turno, puedes llamar a esto, para descartar tu mano y robar 5 cartas.',
+  Guide_1: 'Al inicio de tu turno, puedes llamar esta carta, para descartar tu mano y robar 5 cartas.',
   Haunted_Woods_1: 'Al inicio de tu próximo turno, ',
   Haunted_Woods_2: '+3 Cartas.',
   Haunted_Woods_3:
@@ -55,11 +55,11 @@ export const adventureDescriptionLabelsEs: Record<AdventureCardsDescriptions, st
   Port_1: `Cuando ganes esto, gana otro Puerto (que no viene con otro).`,
   Ranger_1: `Gira tu ficha de Viaje (empieza boca arriba). Luego, si está boca arriba, `,
   Ranger_2: '+5 Cartas.',
-  Ratcatcher_1: 'Al inicio de tu turno, puedes llamar a esto, para descartar una carta de tu mano.',
+  Ratcatcher_1: 'Al inicio de tu turno, puedes llamar esta carta, para descartar una carta de tu mano.',
   Raze_1: 'Destruye esto o una carta de tu mano. Mira una carta de la parte superior de tu mazo por cada ',
   Raze_2: ' el costo de la carta destruida. Pon una de ellas en tu mano y descarta el resto.',
   Relic_1: 'Cada otro jugador pone su ficha de -1 Carta en su mazo.',
-  Royal_Carriage_1: `Justo después de terminar de jugar una carta de Acción, si todavía está en juego, puedes llamar a esto, para jugar de nuevo esa Acción.`,
+  Royal_Carriage_1: `Justo después de terminar de jugar una carta de Acción, si todavía está en juego, puedes llamar esta carta, para jugar de nuevo esa Acción.`,
   Soldier_1: '+',
   Soldier_2:
     ' por cada otro Ataque que tengas en juego. Cada otro jugador con 4 o más cartas en mano descarta una carta.',
@@ -74,11 +74,11 @@ export const adventureDescriptionLabelsEs: Record<AdventureCardsDescriptions, st
   Swamp_Hag_1: 'Al inicio de tu próximo turno, +',
   Swamp_Hag_2: '. Hasta entonces, cuando cualquier otro jugador gane una carta que compró, gana una Maldición.',
   Teacher_1:
-    'Al inicio de tu turno, puedes llamar a esto, para mover tu ficha de + 1 Carta, +1 Acción, +1 Compra, o +1',
+    'Al inicio de tu turno, puedes llamar esta carta, para mover tu ficha de + 1 Carta, +1 Acción, +1 Compra, o +1',
   Teacher_2:
     ' a una pila de Suministro de Acción en la que no tengas fichas. (Cuando juegas una carta de esa pila, primero obtienes ese bono).',
   Transmogrify_1:
-    'Al inicio de tu turno, puedes llamar a esto, para destruir una carta de tu mano, y ganar una carta que cueste hasta ',
+    'Al inicio de tu turno, puedes llamar esta carta, para destruir una carta de tu mano, y ganar una carta que cueste hasta ',
   Transmogrify_2: ' más que ella en tu mano.',
   Treasure_Hunter_1: 'Gana una Plata por cada carta que el jugador a tu derecha ganó el turno pasado.',
   Treasure_Hunter_2: 'Cuando descartes esta carta al juego, puedes cambiarlo por un Guerrero.',

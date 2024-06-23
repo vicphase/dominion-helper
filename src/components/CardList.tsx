@@ -1,23 +1,15 @@
-'use client';
-
 import Card from '@dominion/components/Card';
 import { Langs } from '@dominion/models/app.model';
 import { Card as CardModel, CardSize } from '@dominion/models/card.model';
-import Image from 'next/image';
 import { useRef, useState } from 'react';
 
 export interface CardListProps {
   cards: CardModel[];
-  startNewGame: () => void;
+  lang: Langs;
+  listName: string;
 }
 
-const flags: Record<Langs, string> = {
-  [Langs.en]: 'us-flag',
-  [Langs.es]: 'mx-flag',
-};
-
-export default function CardList({ cards, startNewGame }: CardListProps) {
-  const [lang, setLang] = useState(Langs.en);
+export default function CardList({ cards, lang, listName }: CardListProps) {
   const [card, setCard] = useState<CardModel | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -27,29 +19,21 @@ export default function CardList({ cards, startNewGame }: CardListProps) {
   };
   return (
     <>
-      <div className="mb-5 flex w-full">
-        <div className="w-1/2">
-          {Object.values(Langs).map(item => (
-            <button
-              className={`mr-3 rounded-full border-8 ${item === lang ? 'border-blue-500' : 'border-transparent'}`}
-              key={item}
-              onClick={() => setLang(item)}
-            >
-              <Image src={`/img/elements/${flags[item]}.png`} alt={item} width={64} height={64} />
-            </button>
-          ))}
-        </div>
-        <div className="flex w-1/2 items-center justify-end">
-          <button className="rounded bg-blue-600 px-5 py-2" type="button" onClick={() => startNewGame()}>
-            <span className="text-neutral-200"> Start New Game</span>
-          </button>
-        </div>
+      <div className="w-full text-center">
+        <h2 className="mt-10 mb-7 text-3xl">{listName}</h2>
       </div>
-      {cards.map(item => (
-        <div key={item.name} className="pb-3 pr-3" onClick={() => openDialog(item)}>
-          <Card card={item} lang={lang} size={CardSize.Normal} />
-        </div>
-      ))}
+      <div className="flex w-full flex-wrap">
+        {cards.map(item => (
+          <div
+            key={item.name}
+            className="flex w-1/2 justify-center pb-3 sm:w-1/4 lg:w-1/6"
+            onClick={() => openDialog(item)}
+          >
+            <Card card={item} lang={lang} size={CardSize.Normal} />
+          </div>
+        ))}
+      </div>
+
       <dialog ref={dialogRef}>
         <div className="bg-neutral-200 px-3 pb-4">
           <div className="relative flex w-full justify-end">

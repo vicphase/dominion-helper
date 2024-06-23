@@ -1,3 +1,7 @@
+import { AdventureCards } from '@dominion/data/cards/adventures';
+import { BaseCards } from '@dominion/data/cards/base';
+import { StapleCards } from '@dominion/data/cards/staple';
+
 export interface Card {
   name: string;
   cost: number;
@@ -6,6 +10,8 @@ export interface Card {
   descriptionFontSizePx?: number;
   benefitFontSizePx?: number;
   titleFontSizePx?: number;
+  excludedFromSupply?: boolean;
+  upgradeCards?: DominionCards[];
   description?: CardDescription;
   expansion: DominionExpansions;
 }
@@ -108,3 +114,5 @@ export enum CardSize {
   Normal = 'Normal',
   Large = 'Large',
 }
+
+export type DominionCards = StapleCards | BaseCards | AdventureCards;

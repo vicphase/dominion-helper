@@ -308,6 +308,7 @@ export const cards: Card[] = [
     type: CardType.actionTraveller,
     imagePath: 'img/cards/art/adventures/treasure-hunter.webp',
     expansion: DominionExpansions.Adventures,
+    excludedFromSupply: true,
     titleFontSizePx: 8,
     benefitFontSizePx: 7,
     descriptionFontSizePx: 5,
@@ -424,6 +425,7 @@ export const cards: Card[] = [
     type: CardType.actionDuration,
     imagePath: 'img/cards/art/adventures/champion.webp',
     expansion: DominionExpansions.Adventures,
+    excludedFromSupply: true,
     benefitFontSizePx: 8,
     descriptionFontSizePx: 7,
     description: [
@@ -444,6 +446,7 @@ export const cards: Card[] = [
     type: CardType.actionTraveller,
     imagePath: 'img/cards/art/adventures/disciple.webp',
     expansion: DominionExpansions.Adventures,
+    excludedFromSupply: true,
     descriptionFontSizePx: 7,
     description: [
       {
@@ -506,6 +509,7 @@ export const cards: Card[] = [
     type: CardType.actionTraveller,
     imagePath: 'img/cards/art/adventures/fugitive.webp',
     expansion: DominionExpansions.Adventures,
+    excludedFromSupply: true,
     descriptionFontSizePx: 7,
     description: [
       { type: CardDescriptionItemType.benefit, content: { type: BenefitType.card, amount: 2 } },
@@ -588,6 +592,7 @@ export const cards: Card[] = [
     type: CardType.actionTraveller,
     imagePath: 'img/cards/art/adventures/hero.webp',
     expansion: DominionExpansions.Adventures,
+    excludedFromSupply: true,
     descriptionFontSizePx: 7,
     description: [
       { type: CardDescriptionItemType.benefit, content: { type: BenefitType.treasure, amount: 2 } },
@@ -684,6 +689,12 @@ export const cards: Card[] = [
     type: CardType.actionTraveller,
     imagePath: 'img/cards/art/adventures/page.webp',
     expansion: DominionExpansions.Adventures,
+    upgradeCards: [
+      AdventureCards['Treasure Hunter'],
+      AdventureCards.Warrior,
+      AdventureCards.Hero,
+      AdventureCards.Champion,
+    ],
     description: [
       { type: CardDescriptionItemType.benefit, content: { type: BenefitType.card, amount: 1 } },
       { type: CardDescriptionItemType.benefit, content: { type: BenefitType.action, amount: 1 } },
@@ -699,6 +710,7 @@ export const cards: Card[] = [
     type: CardType.actionTraveller,
     imagePath: 'img/cards/art/adventures/peasant.webp',
     expansion: DominionExpansions.Adventures,
+    upgradeCards: [AdventureCards.Soldier, AdventureCards.Fugitive, AdventureCards.Disciple, AdventureCards.Teacher],
     description: [
       { type: CardDescriptionItemType.benefit, content: { type: BenefitType.buy, amount: 1 } },
       { type: CardDescriptionItemType.benefit, content: { type: BenefitType.treasure, amount: 1 } },
@@ -801,6 +813,7 @@ export const cards: Card[] = [
     type: CardType.actionTraveller,
     imagePath: 'img/cards/art/adventures/soldier.webp',
     expansion: DominionExpansions.Adventures,
+    excludedFromSupply: true,
     descriptionFontSizePx: 6,
     benefitFontSizePx: 8,
     description: [
@@ -853,6 +866,7 @@ export const cards: Card[] = [
     type: CardType.actionReserve,
     imagePath: 'img/cards/art/adventures/teacher.webp',
     expansion: DominionExpansions.Adventures,
+    excludedFromSupply: true,
     descriptionFontSizePx: 6,
     description: [
       {
@@ -901,6 +915,7 @@ export const cards: Card[] = [
     type: CardType.actionAttackTraveller,
     imagePath: 'img/cards/art/adventures/warrior.webp',
     expansion: DominionExpansions.Adventures,
+    excludedFromSupply: true,
     benefitFontSizePx: 7,
     descriptionFontSizePx: 5,
     description: [
