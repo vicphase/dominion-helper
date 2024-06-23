@@ -46,7 +46,7 @@ export default function GameMenu({ onStartGame }: GameMenuProps) {
               >
                 {expansion.toUpperCase()}
                 <div className="mt-3 flex w-full justify-center">
-                  <Image src={`/img/elements/${expansion}.png`} alt={expansion} width={64} height={64} />
+                  <Image src={`/img/elements/${expansion.toLowerCase()}.png`} alt={expansion} width={64} height={64} />
                 </div>
               </div>
             </button>
